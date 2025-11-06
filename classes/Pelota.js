@@ -8,7 +8,7 @@ class Pelota {
      this.velx;
      this.vely;
 
-     this.diam = random(10, 100);
+     this.diam = random(25, 100);
      this.rad = this.diam / 2;
 
      this.posx = random(this.rad, width - this.rad);
@@ -37,10 +37,34 @@ class Pelota {
 
     visualizar() {
 
-        fill(this.nuevoColor);
-        stroke("#ffffffff");
-        strokeWeight(5);
-        circle( this.posx, this.posy, this.diam);
+    push();
+    translate(this.posx, this.posy);
+    stroke(0);
+    strokeWeight(this.diam * 0.1);
+    noFill();
+    ellipse(0, 0, this.diam);
+
+    noStroke();
+    fill(255, 0, 0);
+    arc(0, 0, this.diam, this.diam, PI, 0, CHORD);
+
+    fill(255);
+    arc(0, 0, this.diam, this.diam, 0, PI, CHORD);
+
+    stroke(0);
+    strokeWeight(this.diam * 0.08);
+    line(-this.rad, 0, this.rad, 0);
+
+    fill(255);
+    stroke(0);
+    strokeWeight(this.diam * 0.06);
+    ellipse(0, 0, this.diam * 0.3);
+
+    noStroke();
+    fill(255);
+    ellipse(0, 0, this.diam * 0.18);
+
+    pop();
         
 }
 
