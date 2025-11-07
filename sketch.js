@@ -13,7 +13,7 @@ function setup(){
 }
 
 function draw() {
-    background(150);
+    background("#ff1d1dff");
 
     for(let i = 0; i < NP; i++){
         pelotas[i].actualizar();
